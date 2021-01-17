@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-export default function Home({ data }) {
+export default function Page({ data }) {
   const page = data.allWpPage.nodes[0]
   console.log(page)
   return (
@@ -13,8 +13,8 @@ export default function Home({ data }) {
 }
 
 export const query = graphql`
-  query {
-    allWpPage(filter: {isFrontPage: {eq: true}}) {
+  query($slug: String!) {
+    allWpPage(filter: { slug: { eq: $slug } }) {
       nodes {
         title
         content
