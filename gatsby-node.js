@@ -4,19 +4,21 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allWpPage {
+      allWpPage (filter: { status: { eq : "publish" } }) {
         nodes {
+          id
           title
           content
           slug
+          isFrontPage
         }
       }
     }
   `).then((result) => {
     result.data.allWpPage.nodes.forEach((node) => {
       createPage({
-        path: node.slug,
-        component: path.resolve(`./src/templates/page.js`),
+        path: node.isFrontPage === true ? '/' : node.slug,
+        component: path.resolve(`./src/templates/single/page.js`),
         context: {
           slug: node.slug,
         },
