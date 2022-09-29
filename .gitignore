@@ -1,6 +1,0 @@
-# .gitignore
-.env.development
-
-node_modules/
-.cache/
-public
