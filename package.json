@@ -1,8 +1,8 @@
 {
-  "name": "richcookson.info",
+  "name": "test",
   "version": "1.0.0",
   "private": true,
-  "description": "richcookson.info",
+  "description": "test",
   "author": "Rich Cookson",
   "keywords": [
     "gatsby"
@@ -15,14 +15,14 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.26.1",
-    "gatsby-plugin-sass": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.12.0",
-    "gatsby-source-wordpress-experimental": "^6.0.0",
-    "gatsby-transformer-sharp": "^2.10.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "sass": "^1.32.2"
+    "gatsby": "^4.24.0",
+    "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-sass": "^5.24.0",
+    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-source-wordpress": "^6.24.0",
+    "gatsby-transformer-sharp": "^4.24.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sass": "^1.55.0"
   }
 }

@@ -1,8 +1,8 @@
 const path = require(`path`)
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return graphql(`
+  const result = await graphql(`
     {
       allWpPage (filter: { status: { eq : "publish" } }) {
         nodes {
@@ -14,15 +14,14 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then((result) => {
-    result.data.allWpPage.nodes.forEach((node) => {
-      createPage({
-        path: node.isFrontPage === true ? '/' : node.slug,
-        component: path.resolve(`./src/templates/single/page.js`),
-        context: {
-          slug: node.slug,
-        },
-      })
+  `)
+  result.data.allWpPage.nodes.forEach((node) => {
+    createPage({
+      path: node.isFrontPage === true ? '/' : node.slug,
+      component: path.resolve(`./src/templates/single/page.js`),
+      context: {
+        slug: node.slug,
+      },
     })
   })
 }

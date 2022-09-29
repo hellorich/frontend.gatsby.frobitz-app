@@ -1,24 +1,12 @@
-let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
-
-console.log(`Using environment config: ${activeEnv}`)
-
-require('dotenv').config({
-  path: `.env.${activeEnv}`,
-})
-
-console.log(`This WordPress Endpoint is used: ${process.env.WORDPRESS_URL}`)
-
 module.exports = {
   siteMetadata: {
-    title: 'richcookson.info',
+    title: `Test`,
+    siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: [
-    {
-      resolve: 'gatsby-source-wordpress-experimental',
-      options: {
-        url: `${process.env.WORDPRESS_URL}/graphql`,
-      },
-    },
-    "gatsby-plugin-sass",
-  ],
+  plugins: [{
+    resolve: 'gatsby-source-wordpress',
+    options: {
+      "url": "https://frobitz.app/richcookson-info/graphql"
+    }
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass"]
 };
