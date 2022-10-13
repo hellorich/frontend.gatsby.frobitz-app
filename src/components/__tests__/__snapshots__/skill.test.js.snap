@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skill renders correctly 1`] = `
+<li
+  className="skill-list-item"
+>
+  <a
+    className="skill skill--basic"
+    href="{link}"
+    rel="external"
+  >
+    Test Skill
+  </a>
+</li>
+`;
