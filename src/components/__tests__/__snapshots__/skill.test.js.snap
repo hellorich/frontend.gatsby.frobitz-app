@@ -5,7 +5,7 @@ exports[`Skill renders correctly 1`] = `
   className="skill-list-item"
 >
   <a
-    className="skill skill--basic"
+    className="skill skill--advanced"
     href="{link}"
     rel="external"
   >
