@@ -23,3 +23,7 @@
     background-color: rgb(33, 201, 243);
   }
 }
+
+.skill-list--item {
+  list-style: none;
+}

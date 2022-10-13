@@ -2,7 +2,7 @@
 
 exports[`Skill renders correctly 1`] = `
 <li
-  className="skill-list-item"
+  className="skill-list--item"
 >
   <a
     className="skill skill--advanced"

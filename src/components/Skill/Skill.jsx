@@ -5,7 +5,7 @@ import './skill.css'
 export default function Skill ({ skill: { title, level, link } }) {
   const skillLevel = `skill--${level}`
   return (
-    <li className="skill-list-item">
+    <li className="skill-list--item">
       <a 
         className={['skill', skillLevel].join(' ')}
         href="{link}"
