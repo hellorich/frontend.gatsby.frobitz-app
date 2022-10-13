@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
