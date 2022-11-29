@@ -1,5 +1,5 @@
 import React from 'react'
-import Skill from './Skill'
+import Skill from 'src/components/Skill'
 
 export default {
   component: Skill,
