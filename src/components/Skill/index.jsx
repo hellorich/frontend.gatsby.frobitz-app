@@ -1,19 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './skill.css'
+import { StyledSkill } from './styled'
 
-export default function Skill ({ skill: { title, level, link } }) {
+export const Skill = ({ skill: { title, level, link } }) => {
   const skillLevel = `skill--${level}`
+  
   return (
-    <li className="skill-list--item">
+    <StyledSkill className='skill-list--item'>
       <a 
         className={['skill', skillLevel].join(' ')}
-        href="{link}"
-        rel="external"
+        href={link}
+        rel='external'
       >
       {title}
       </a>
-    </li>
+    </StyledSkill>
   )
 }
 
