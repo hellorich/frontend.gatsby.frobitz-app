@@ -1,6 +1,8 @@
+const path = require("path")
+
 module.exports = {
   "stories": [
-    "../src/**/*.stories.mdx",
+    "../src/**/stories.@(js|jsx|ts|tsx)",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
@@ -13,6 +15,10 @@ module.exports = {
     "builder": "@storybook/builder-webpack5"
   },
   webpackFinal: async config => {
+    config.resolve.modules = [
+      path.resolve(__dirname, "../src"),
+      "node_modules"
+    ],
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby|gatsby-script)\/)/]
     // Remove core-js to prevent issues with Storybook
@@ -22,6 +28,7 @@ module.exports = {
       require.resolve("babel-plugin-remove-graphql-queries")
     )
     config.resolve.mainFields=["browser", "module", "main"]
+    
     return config
   },
 }
